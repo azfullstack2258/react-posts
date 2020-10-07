@@ -53,13 +53,13 @@ const PostTableRow = ({ data }) => {
     },
     {
       key: 'post_date',
-      renderer: (date) => (
+      renderer: (date) => date && date !== 'null' ? (
         <>
           <div>{moment(date).format('dddd')}</div>
           <div>{moment(date).format('MMM DD')}</div>
           <div>{moment(date).format('yyyy')}</div>
         </>
-      )
+      ) : 'N/A'
     },
     {
       key: 'post_media',
@@ -71,7 +71,15 @@ const PostTableRow = ({ data }) => {
     },
     {
       key: 'post_content',
-      renderer: (content) => <div dangerouslySetInnerHTML={{__html: content}} />
+      renderer: (content) => (
+        <div
+          dangerouslySetInnerHTML={
+            { __html:
+                (content && content.replace(/@([a-z\d_]+)/ig, '<span class="mention">@$1</span>')) || ''
+            }
+          }
+        />
+      )
     }
   ], []);
 

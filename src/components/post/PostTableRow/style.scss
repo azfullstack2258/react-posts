@@ -66,6 +66,13 @@
 
     &.post_content {
       flex-grow: 1;
+
+      .mention {
+        font-weight: bold;
+        padding: 2px;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.2);
+      }
     }
 
     &.social_network {
