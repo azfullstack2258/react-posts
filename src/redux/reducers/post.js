@@ -13,6 +13,8 @@ export const loadPosts = createAction(actionTypes.loadPostsRequest);
 const defaultState = {
   isLoading: false,
   posts: [],
+  users: [],
+  properties: [],
   error: null,
 };
 
@@ -24,6 +26,8 @@ const postReducer = (state = defaultState, action) =>
         break;
       case actionTypes.loadPostsSucceed:
         draft.posts = action.posts;
+        draft.users = action.users;
+        draft.properties = action.properties;
         break;
       case actionTypes.loadPostsFail:
         draft.error = action.error;
