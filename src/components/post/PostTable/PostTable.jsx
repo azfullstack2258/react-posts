@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import PostTableHeader from '../PostTableHeader';
 import PostTableRow from '../PostTableRow';
+import './style.scss';
 
 const PostTable = ({ posts }) => {
   return (
