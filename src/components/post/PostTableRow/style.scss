@@ -1,7 +1,112 @@
 .post-table__row {
   display: flex;
-  background: #333;
+  background: #343a40;
+
+  svg path {
+    fill: #343a40;
+  }
+
   &:nth-child(even) {
-    background: #888;
+    background: #3e444a;
+
+    svg path {
+      fill: #3e444a;
+    }
+  }
+
+  &-cell {
+    color: white;
+    padding: 20px 10px;
+
+    img {
+      width: 80px;
+      height: 80px;
+    }
+
+    &:not(.content) {
+      border-right: 1px solid #464d55;
+    }
+
+    &.id {
+      min-width: 30px;
+
+    }
+
+    &.user {
+      min-width: 120px;
+      max-width: 120px;
+
+      .user-image {
+        margin-top: 4px;
+        padding: 10px;
+        border: 1px solid #434a51;
+        width: 100px;
+        height: 100px;
+
+        img {
+          width: 100px;
+          height: 100px;
+        }
+
+        div {
+          width: 100px;
+          height: 100px;
+          border: 1px solid #c0c0c0;
+        }
+      }
+    }
+
+    &.social_network,
+    &.property,
+    &.post_date,
+    &.post_media {
+      min-width: 100px;
+      max-width: 100px;
+    }
+
+    &.post_content {
+      flex-grow: 1;
+    }
+
+    &.social_network {
+      display: flex;
+      justify-content: center;
+
+      .social-network {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        color: transparent;
+        font-size: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.facebook {
+          background: #3c5997;
+        }
+        &.twitter {
+          background: #03aced;
+        }
+        &.instagram {
+          background: #3f739a;
+        }
+        &.share {
+          background: #03bf02;
+        }
+      }
+    }
+
+    &.post_media {
+      img {
+        width: 90px;
+        height: 90px;
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #c0c0c0;
+      }
+    }
   }
 }

@@ -26,10 +26,10 @@ const PostTableRow = ({ data }) => {
       renderer: (item) => (
         <>
           <div>{item ? item.name : 'Unknown'}</div>
-          <div>
+          <div className="user-image">
             {item
               ? <img src={item.profile_picture} alt="user_img" />
-              : <div>no image</div>
+              : <div />
             }
           </div>
         </>
@@ -39,13 +39,15 @@ const PostTableRow = ({ data }) => {
       key: 'social_network',
       renderer: (name) => {
         let icon = 'share-alt';
+        let socialNetwork = 'share';
+  
         if (name) {
-          const socialNetwork = socialNetworkNames.find(sn => name.includes(sn));
-          icon = (socialNetwork && socialNetworkIcons[socialNetwork]) || 'share-alt'
+          socialNetwork = socialNetworkNames.find(sn => name.includes(sn)) || 'share';
         }
+        icon = socialNetworkIcons[socialNetwork];
 
         return (
-          <><FontAwesomeIcon icon={icon} />sdf</>
+          <div className={`social-network ${socialNetwork}`}><FontAwesomeIcon icon={icon} /></div>
         );
       }
     },
@@ -57,7 +59,7 @@ const PostTableRow = ({ data }) => {
       key: 'post_media',
       renderer: (image) => (
         <>
-          {image ? <img src={image} alt="post_img" /> : <div>no image</div>}
+          {image && image !== 'null' ? <img src={image} alt="post_img" /> : <div />}
         </>
       )
     },
@@ -70,7 +72,7 @@ const PostTableRow = ({ data }) => {
   return (
     <div className="post-table__row">
       {headers.map(({ key, renderer }) => (
-        <div key={key} className={`post-table__row-cell--${key}`}>
+        <div key={key} className={`post-table__row-cell ${key}`}>
           {typeof renderer === 'function' ? renderer(data[key]) : data[key]}
         </div>
       ))}

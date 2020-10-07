@@ -8,6 +8,7 @@ import {
   makeSelectPostsError,
   makeSelectPostData
 } from '../../redux/selectors';
+import './style.scss';
 
 const Posts = () => {
   const dispatch = useDispatch();
@@ -20,8 +21,8 @@ const Posts = () => {
   console.log('Post Data', postData);
 
   return (
-    <div>
-      Latest Posts
+    <div className="container">
+      <div className="title">Latest Posts</div>
       {isLoading ? <div>Loading...</div> : (
         error ? (
           <div>Something went wrong.</div>

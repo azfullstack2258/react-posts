@@ -1,3 +1,41 @@
-.post-table__row {
+.post-table__header {
   display: flex;
+  background: #343a40;
+
+  .post-table__row-cell {
+    white-space: nowrap;
+    min-width: fit-content;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+
+    &:not(.content) {
+      border-right: 1px solid #464d55;
+    }
+
+    &.id {
+      width: 30px;
+    }
+
+    &.user {
+      min-width: 120px;
+      max-width: 120px;
+    }
+
+    &.property,
+    &.network,
+    &.date,
+    &.image {
+      min-width: 100px;
+      max-width: 100px;
+    }
+
+    &.content {
+      flex-grow: 1;
+    }
+  }
 }
