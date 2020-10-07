@@ -53,7 +53,13 @@ const PostTableRow = ({ data }) => {
     },
     {
       key: 'post_date',
-      renderer: (date) => <>{moment(date).format('Mo dd yyyy')}</>
+      renderer: (date) => (
+        <>
+          <div>{moment(date).format('dddd')}</div>
+          <div>{moment(date).format('MMM DD')}</div>
+          <div>{moment(date).format('yyyy')}</div>
+        </>
+      )
     },
     {
       key: 'post_media',
