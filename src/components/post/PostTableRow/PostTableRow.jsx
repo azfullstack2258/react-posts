@@ -85,11 +85,11 @@ const PostTableRow = ({ data }) => {
 
   return (
     <div className="post-table__row">
-      {headers.map(({ key, renderer }) => (
+      {data ? headers.map(({ key, renderer }) => (
         <div key={key} className={`post-table__row-cell ${key}`}>
           {typeof renderer === 'function' ? renderer(data[key]) : data[key]}
         </div>
-      ))}
+      )) : ''}
     </div>
   );
 };

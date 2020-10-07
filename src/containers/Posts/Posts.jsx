@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import PostTable from '../../components/post/PostTable';
+import { LoadingSpinner } from '../../components/_shared';
 import { loadPosts } from '../../redux/reducers/post';
 import {
   makeSelectPostsLoading,
   makeSelectPostsError,
   makeSelectPostData
 } from '../../redux/selectors';
-import loaderGif from '../../assets/img/loader.gif';
 import './style.scss';
 
 const Posts = () => {
@@ -26,7 +26,7 @@ const Posts = () => {
       <div className="title">Latest Posts</div>
       {isLoading ? (
         <div className="loading-container">
-          <img src={loaderGif} alt="loader_gif" />
+          <LoadingSpinner />
         </div>
       ) : (
         error ? (

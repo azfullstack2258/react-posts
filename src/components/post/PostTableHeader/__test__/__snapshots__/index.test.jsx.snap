@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PostTableHeader /> should render a prop 1`] = `
+<div>
+  <div
+    class="post-table__header"
+  >
+    <div
+      class="post-table__row-cell id"
+    >
+      ID
+    </div>
+    <div
+      class="post-table__row-cell property"
+    >
+      Property
+    </div>
+    <div
+      class="post-table__row-cell user"
+    >
+      User
+    </div>
+    <div
+      class="post-table__row-cell network"
+    >
+      Network
+    </div>
+    <div
+      class="post-table__row-cell date"
+    >
+      Date
+    </div>
+    <div
+      class="post-table__row-cell image"
+    >
+      Image
+    </div>
+    <div
+      class="post-table__row-cell content"
+    >
+      Content
+    </div>
+  </div>
+</div>
+`;

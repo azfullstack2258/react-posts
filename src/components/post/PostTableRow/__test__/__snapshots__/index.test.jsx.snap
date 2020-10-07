@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PostTableRow /> should render a prop 1`] = `
+<div>
+  <div
+    class="post-table__row"
+  />
+</div>
+`;
