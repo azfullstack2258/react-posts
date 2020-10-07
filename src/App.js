@@ -13,12 +13,11 @@ library.add(fab, faShareAlt);
 function App() {
   return (
     <Provider store={store}>
-
-    <div className="App">
-      <div className="main-content">
-        <Posts />
+      <div className="App">
+        <div className="main-content">
+          <Posts />
+        </div>
       </div>
-    </div>
     </Provider>
   );
 }
