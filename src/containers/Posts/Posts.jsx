@@ -16,6 +16,8 @@ const Posts = () => {
 
   useEffect(() => dispatch(loadPosts()), []);
 
+  console.log('Post Data', postData);
+
   return (
     <div>
       Latest Posts
@@ -24,7 +26,6 @@ const Posts = () => {
           <div>Something went wrong.</div>
         ) : (
           <div>Posts</div>
-
         )
       )}
     </div>

@@ -38,8 +38,20 @@ const makeSelectPostData = () =>
     makeSelectUsers(),
     makeSelectProperties(),
     (posts, users, properties) => {
-      console.log('posts, users, properties', posts, users, properties);
-      return posts;
+      // Attach user and property to each post
+      return posts.map((post) => {
+        const { user_id: userId, property_id: propertyId } = post;
+        const user =
+          users.find(({ id }) => id === userId);
+        const property =
+          properties.find(({ id }) => id === propertyId);
+        
+        return {
+          ...post,
+          user,
+          property
+        };
+      });
     }
   );
 
