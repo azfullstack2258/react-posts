@@ -17,6 +17,7 @@ const Posts = () => {
   const error = useSelector(makeSelectPostsError());
   const postData = useSelector(makeSelectPostData());
 
+  // eslint-disable-next-line
   useEffect(() => dispatch(loadPosts()), []);
 
   const handleTryAgain = () => dispatch(loadPosts());
