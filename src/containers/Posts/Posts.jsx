@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import PostTable from '../../components/post/PostTable';
 import { loadPosts } from '../../redux/reducers/post';
 import {
   makeSelectPostsLoading,
@@ -25,7 +26,7 @@ const Posts = () => {
         error ? (
           <div>Something went wrong.</div>
         ) : (
-          <div>Posts</div>
+          <PostTable posts={postData} />
         )
       )}
     </div>
