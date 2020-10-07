@@ -10,7 +10,6 @@ function* fetchPostsSaga() {
     const posts = yield call(fetchPosts);
     const users = yield call(fetchUsers);
     const properties = yield call(fetchProperties);
-
     yield put({
       type: actionTypes.loadPostsSucceed,
       posts,

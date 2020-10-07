@@ -8,6 +8,7 @@ import {
   makeSelectPostsError,
   makeSelectPostData
 } from '../../redux/selectors';
+import loaderGif from '../../assets/img/loader.gif';
 import './style.scss';
 
 const Posts = () => {
@@ -18,14 +19,23 @@ const Posts = () => {
 
   useEffect(() => dispatch(loadPosts()), []);
 
-  console.log('Post Data', postData);
+  const handleTryAgain = () => dispatch(loadPosts());
 
   return (
     <div className="container">
       <div className="title">Latest Posts</div>
-      {isLoading ? <div>Loading...</div> : (
+      {isLoading ? (
+        <div className="loading-container">
+          <img src={loaderGif} alt="loader_gif" />
+        </div>
+      ) : (
         error ? (
-          <div>Something went wrong.</div>
+          <div className="error-box">
+            <div className="error-box__title">Something went wrong</div>
+            <div className="error-box__text">
+              Click <span className="error-box__action" onClick={handleTryAgain}>here</span> to try again.
+            </div>
+          </div>
         ) : (
           <PostTable posts={postData} />
         )
